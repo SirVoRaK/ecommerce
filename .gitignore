@@ -1,3 +1,4 @@
 data/pubsub/*
 data/mongodb/*
 .vim/
+*/.env
