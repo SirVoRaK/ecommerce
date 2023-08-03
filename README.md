@@ -9,7 +9,7 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 
 ### Basic features:
 - Receive orders from third parties origins.
-- Visualize all of the orders.
+- Visualize all orders.
 
 ### Run locally:
 
