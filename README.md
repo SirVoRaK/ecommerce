@@ -59,7 +59,7 @@ docker compose down
 
 #### Publish an order:
 ##### Example Request:
-POST http://localhost:8001/graphql
+**POST** __http://localhost:8001/graphql__
 
 ```graphql
 mutation {
