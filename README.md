@@ -6,13 +6,6 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 ## Summary
 1. [Basic features](#basic-features)
 2. [Run locally](#run-locally)
-3. [Rules](#rules)
-4. [Draw](#draw)
-5. [Game modes](#game-modes)
-6. [Multiplayer](#multiplayer)
-7. [Puzzles](#puzzles)
-8. [Settings](#settings)
-9. [Login and Register](#login-and-register)
 
 ### Basic features:
 - Receive orders from third parties origins.
