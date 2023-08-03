@@ -63,17 +63,17 @@ POST http://localhost:8001/graphql
 
 ```graphql
 mutation {
-	publishPlacedOrderMessage(order: {
-		order: "MY-ORDER-NUMBER-1",
-		origin: "moon",
-		items: [
-			{
-				name: "Boot",
-				image: "image-path.png",
-				qty: 1,
-				cost: 50.25,
-				currency: "BRL"
-			},
+    publishPlacedOrderMessage(order: {
+        order: "MY-ORDER-NUMBER-1",
+        origin: "moon",
+        items: [
+            {
+                name: "Boot",
+                image: "image-path.png",
+                qty: 1,
+                cost: 50.25,
+                currency: "BRL"
+            },
             {
                 name: "Hammer",
                 image: "image-path.png",
@@ -88,21 +88,22 @@ mutation {
                 cost: 2.25,
                 currency: "BRL"
             }
-	] }) {
-		success,
-		message
-	}
+        ]
+    }) {
+        success,
+        message
+    }
 }
 ```
 
 # Example Response:
 ```json
 {
-	"data": {
-		"publishPlacedOrderMessage": {
-			"success": true,
-			"message": "Order created successfully"
-		}
-	}
+    "data": {
+        "publishPlacedOrderMessage": {
+            "success": true,
+            "message": "Order created successfully"
+        }
+    }
 }
 ```
