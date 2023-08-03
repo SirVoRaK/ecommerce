@@ -25,7 +25,7 @@ public class OrdersController {
     }
 
     @MutationMapping
-    public ResultResponse createOrder(@Argument OrderInput order) {
+    public ResultResponse publishPlacedOrderMessage(@Argument OrderInput order) {
         try {
             orderService.create(order);
             return new ResultResponse(true, Messages.ORDER_CREATED);

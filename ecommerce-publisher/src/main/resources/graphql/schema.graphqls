@@ -19,7 +19,7 @@ type Item {
 }
 
 type Mutation {
-  createOrder(order: OrderInput!): ResultResponse
+  publishPlacedOrderMessage(order: OrderInput!): ResultResponse
 }
 
 type ResultResponse {
