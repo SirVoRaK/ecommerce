@@ -1,0 +1,42 @@
+type Query {
+  orders: [Order!]!
+  order(order: String!): Order!
+}
+
+type Order {
+  order: String!
+  origin: String!
+  total: Float!
+  items: [Item!]!
+}
+
+type Item {
+  name: String!
+  image: String!
+  qty: Int!
+  cost: Float!
+  currency: String!
+}
+
+type Mutation {
+  createOrder(order: OrderInput!): ResultResponse
+}
+
+type ResultResponse {
+  success: Boolean!
+  message: String
+}
+
+input OrderInput {
+  order: String!
+  origin: String!
+  items: [ItemInput!]!
+}
+
+input ItemInput {
+  name: String!
+  image: String!
+  qty: Int!
+  cost: Float!
+  currency: String!
+}
