@@ -57,8 +57,8 @@ docker compose down
 
 ### API Usage:
 
-## Publish an order:
-# Example Request:
+#### Publish an order:
+##### Example Request:
 POST http://localhost:8001/graphql
 
 ```graphql
@@ -96,7 +96,7 @@ mutation {
 }
 ```
 
-# Example Response:
+##### Example Response:
 ```json
 {
     "data": {
