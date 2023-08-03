@@ -13,5 +13,6 @@ public class Order {
     private String order;
     private String origin;
     private Double total;
+    private String createdAt;
     private Item[] items;
 }

@@ -1,6 +1,8 @@
 package tech.rodolfoi.ecommercepublisher.dtos;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import lombok.Data;
@@ -13,6 +15,11 @@ public class Order {
     private Double total;
     private String createdAt;
     private List<Item> items;
+
+    public Order() {
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now.format(DateTimeFormatter.ISO_DATE_TIME);
+    }
 
     public void setItems(List<Item> items) {
         BigDecimal total = BigDecimal.ZERO;
