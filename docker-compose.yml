@@ -11,11 +11,6 @@ services:
         soft: 65536
         hard: 65536
     ports:
-      - "8432:8432"
+      - "8000:8432"
     volumes:
       - "./data/pubsub:/opt/data"
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 8G
