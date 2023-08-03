@@ -19,8 +19,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void create(OrderInput orderInput) {
         Order order = Order.fromOrderInput(orderInput);
-        Gson gson = new Gson();
-        System.out.println(gson.toJson(order));
         orderPublisher.publishMessage(order);
     }
 }
