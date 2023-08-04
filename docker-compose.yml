@@ -23,6 +23,12 @@ services:
     depends_on:
       - pubsub
       - mongo
+  frontend:
+    image: ecommerce-frontend
+    ports:
+      - "8000:80"
+    depends_on:
+      - consumer
 
   pubsub:
     image: singularities/pubsub-emulator
