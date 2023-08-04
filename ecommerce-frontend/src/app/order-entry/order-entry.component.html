@@ -1,4 +1,4 @@
-<mat-card *ngIf="order">
+<mat-card *ngIf="order" [routerLink]="order.id">
   <mat-card-content>
     <div class="left-side">
       <div class="info">
@@ -14,7 +14,7 @@
     </div>
     <div class="right-side">
       <button mat-button color="accent">
-        <mat-icon>payments</mat-icon>{{ order.total }}
+        <mat-icon>payments</mat-icon>{{ total }}
       </button>
     </div>
   </mat-card-content>

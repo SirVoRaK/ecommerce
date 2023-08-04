@@ -1,1 +1,17 @@
-<p>item-entry works!</p>
+<mat-card *ngIf="item">
+  <mat-card-content>
+    <div class="left-side">
+      <div class="info">
+        <mat-card-title>
+          <span>{{ item.name }}</span>
+        </mat-card-title>
+      </div>
+    </div>
+    <div class="right-side">
+      <button mat-button color="accent">
+        <mat-icon>payments</mat-icon>{{ cost }} {{ item.currency }} x
+        {{ item.qty }} = {{ total }} {{ item.currency }}
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

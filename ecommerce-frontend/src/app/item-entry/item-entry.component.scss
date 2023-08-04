@@ -1,0 +1,25 @@
+mat-card-content {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.info {
+    overflow: hidden;
+}
+.right-side {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    max-width: 100%;
+}
+mat-card {
+  filter: brightness(1.1);
+}
