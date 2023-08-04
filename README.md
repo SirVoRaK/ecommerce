@@ -28,6 +28,7 @@ cd ecommerce
 ```
 docker build -t ecommerce-publisher ecommerce-publisher
 docker build -t ecommerce-consumer ecommerce-consumer
+docker build -t ecommerce-frontend ecommerce-frontend
 ```
 
 4. **__(IMPORTANT)__** Create the data folder:
