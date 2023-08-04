@@ -21,7 +21,7 @@ public class OrdersConsumer extends BaseConsumer {
     private static final String topic = "orders";
     private static final String subscriptionName = "orders-subscription";
 
-    protected OrdersConsumer() {
+    public OrdersConsumer() {
 		super(topic, subscriptionName);
 	}
 
@@ -29,7 +29,7 @@ public class OrdersConsumer extends BaseConsumer {
     private PubSubTemplate pubSubTemplate;
 
     @Override
-    protected void consume(BasicAcknowledgeablePubsubMessage basicAcknowledgeablePubsubMessage) {
+    public void consume(BasicAcknowledgeablePubsubMessage basicAcknowledgeablePubsubMessage) {
         PubsubMessage message = basicAcknowledgeablePubsubMessage.getPubsubMessage();
 
         Boolean savedSuccessfully = this.saveOrder(message);
@@ -47,7 +47,7 @@ public class OrdersConsumer extends BaseConsumer {
             Gson gson = new Gson();
             Order order = gson.fromJson(orderJson, Order.class);
 
-            this.orderService.save(order);
+            orderService.save(order);
         } catch(Exception ex) {
             System.out.println("Error: " + ex.getMessage());
             return false;
@@ -56,7 +56,8 @@ public class OrdersConsumer extends BaseConsumer {
     }
 
     @EventListener(ApplicationReadyEvent.class)
+    @Override
     public void subscribe() {
-        pubSubTemplate.subscribe(this.subscription(), this.consumer());
+        super.consumeMessage();
     }
 }

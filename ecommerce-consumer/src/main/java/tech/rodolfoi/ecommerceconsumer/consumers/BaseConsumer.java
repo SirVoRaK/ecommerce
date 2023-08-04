@@ -25,25 +25,22 @@ public abstract class BaseConsumer {
         this.subscriptionName = subscriptionName;
     }
 
-    protected String subscription() {
-        return createSubscription(this.topic, this.subscriptionName);
-	}
-
     protected abstract void consume(BasicAcknowledgeablePubsubMessage message);
+    protected abstract void subscribe();
 
     public Consumer<BasicAcknowledgeablePubsubMessage> consumer() {
-        return basicAcknowledgeablePubsubMessage -> consume(basicAcknowledgeablePubsubMessage);
+        return this::consume;
     }
 
-    public Subscriber consumeMessage() {
-        return this.pubSubTemplate.subscribe(this.subscription(), this.consumer());
+    protected void consumeMessage() {
+        pubSubTemplate.subscribe(subscription(), consumer());
     }
 
-	private String createSubscription(String topic, String subscription) {
-        if (this.pubSubAdmin.getSubscription(subscription) != null)
-            return subscription;
+    protected String subscription() {
+        if (pubSubAdmin.getSubscription(subscriptionName) != null)
+            return subscriptionName;
 
-        Subscription createSubscription = this.pubSubAdmin.createSubscription(subscription, topic);
+        Subscription createSubscription = pubSubAdmin.createSubscription(subscriptionName, topic);
         return createSubscription.getName();
     }
 }
