@@ -239,4 +239,4 @@ Accessing `http://localhost:8000/orders` in your browser you will see:
 ![orders list](screenshots/orders-list.png)
 
 Accessing `http://localhost:8000/orders/ID` you will see:
-![order detail](screenshots/order-detail.png)
+![order details](screenshots/order-details.png)
