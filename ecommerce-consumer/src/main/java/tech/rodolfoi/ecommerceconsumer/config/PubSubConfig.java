@@ -14,7 +14,11 @@ public class PubSubConfig {
     @Bean
     public void createTopicIfNotExists() {
         String topicName = "orders";
-        if (pubSubAdmin.getTopic(topicName) == null)
-            pubSubAdmin.createTopic(topicName);
+        try {
+            if (pubSubAdmin.getTopic(topicName) == null)
+                pubSubAdmin.createTopic(topicName);
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
