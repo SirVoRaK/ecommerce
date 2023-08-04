@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  h1, h3 {
+    margin: 5px 0;
+  }
+}
+
+.container {
+  button.prop {
+    margin-right: auto;
+  }
+}

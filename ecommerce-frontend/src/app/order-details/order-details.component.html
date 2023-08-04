@@ -1,0 +1,18 @@
+<div class="container" *ngIf="order">
+  <header>
+    <button mat-button color="basic">
+      <h1><mat-icon>archive</mat-icon> {{ order.order }}</h1>
+    </button>
+  </header>
+  <button class="prop" mat-button color="accent">
+    <mat-icon>calendar_month</mat-icon>Created At:
+    <b>{{ order.createdAt | date : "dd/MM/yyyy, HH:mm" }}</b>
+  </button>
+  <button class="prop" mat-button color="accent">
+    <mat-icon>home</mat-icon>Origin: <b>{{ order.origin }}</b>
+  </button>
+  <button class="prop" mat-button color="accent">
+    <mat-icon>payments</mat-icon>Total: <b>{{ order.total }}</b>
+  </button>
+  <app-items-list [items]="order.items"></app-items-list>
+</div>

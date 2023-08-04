@@ -1,0 +1,21 @@
+<mat-card *ngIf="order">
+  <mat-card-content>
+    <div class="left-side">
+      <div class="info">
+        <mat-card-title>
+          <a mat-button [routerLink]="order.id">
+            <span>{{ order.order }}</span>
+          </a>
+        </mat-card-title>
+        <mat-card-subtitle>
+          from <i>{{ order.origin }}</i>
+        </mat-card-subtitle>
+      </div>
+    </div>
+    <div class="right-side">
+      <button mat-button color="accent">
+        <mat-icon>payments</mat-icon>{{ order.total }}
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
