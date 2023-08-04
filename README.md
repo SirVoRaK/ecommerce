@@ -25,15 +25,15 @@ cd ecommerce
 
 3. Build the docker images:
 
-```
-docker build -t ecommerce-publisher ecommerce-publisher
-docker build -t ecommerce-consumer ecommerce-consumer
+```bash
+docker build -t ecommerce-publisher ecommerce-publisher && \
+docker build -t ecommerce-consumer ecommerce-consumer && \
 docker build -t ecommerce-frontend ecommerce-frontend
 ```
 
 4. **__(IMPORTANT)__** Create the data folder:
 
-```
+```bash
 mkdir data
 mkdir data/mongodb
 mkdir data/pubsub
@@ -41,18 +41,18 @@ mkdir data/pubsub
 
 5. Run the containers:
     1. Keep attached:
-    ```
+    ```bash
     docker compose up
     ```
 
     2. Run in background:
-    ```
+    ```bash
     docker compose up -d
     ```
 
 6. Stop the container:
 
-```
+```bash
 docker compose down
 ```
 
