@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { constants } from '../constants/constants';
 import { Order } from '../models/Order';
 
@@ -11,7 +11,7 @@ import { Order } from '../models/Order';
 export class OrderDetailsComponent {
   order!: Order;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     const orderId = this.route.snapshot.paramMap.get('id')!;
@@ -49,5 +49,7 @@ export class OrderDetailsComponent {
     });
     const responseJson = await response.json();
     this.order = responseJson.data.placedOrder;
+
+    if (!this.order) this.router.navigate(['/']);
   }
 }
