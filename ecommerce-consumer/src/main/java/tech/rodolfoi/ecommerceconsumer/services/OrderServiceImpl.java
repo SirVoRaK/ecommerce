@@ -28,9 +28,6 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Order findById(String id) {
         Optional<Order> order = this.orderRepository.findById(id);
-        if (order.isEmpty())
-            return null;
-
-        return order.get();
-	}
+        return order.orElse(null);
+    }
 }
