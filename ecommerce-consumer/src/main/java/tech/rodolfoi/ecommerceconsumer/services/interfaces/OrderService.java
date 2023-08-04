@@ -7,4 +7,5 @@ import tech.rodolfoi.ecommerceconsumer.entities.Order;
 public interface OrderService {
     void save(Order order);
     List<Order> findAll();
+    Order findById(String id);
 }

@@ -1,6 +1,7 @@
 package tech.rodolfoi.ecommerceconsumer.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -15,5 +16,10 @@ public class OrderController {
     @QueryMapping
     public Iterable<Order> placedOrders() {
         return this.orderService.findAll();
+    }
+
+    @QueryMapping
+    public Order placedOrder(@Argument String id) {
+        return this.orderService.findById(id);
     }
 }

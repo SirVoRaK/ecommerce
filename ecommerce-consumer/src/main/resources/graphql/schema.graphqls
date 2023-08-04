@@ -1,5 +1,6 @@
 type Query {
   placedOrders: [Order!]
+  placedOrder(id: ID!): Order!
 }
 
 type Order {

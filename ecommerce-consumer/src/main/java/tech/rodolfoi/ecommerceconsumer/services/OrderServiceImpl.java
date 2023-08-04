@@ -1,6 +1,7 @@
 package tech.rodolfoi.ecommerceconsumer.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,4 +24,13 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> findAll() {
         return this.orderRepository.findAll();
     }
+
+	@Override
+	public Order findById(String id) {
+        Optional<Order> order = this.orderRepository.findById(id);
+        if (order.isEmpty())
+            return null;
+
+        return order.get();
+	}
 }
