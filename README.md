@@ -7,6 +7,7 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 1. [Basic features](#basic-features)
 2. [Run locally](#run-locally)
 3. [API Usage](#api-usage)
+4. [Front End](#front-end)
 
 ### Basic features:
 - Receive orders from third parties origins.
@@ -232,3 +233,10 @@ query {
 	}
 }
 ```
+
+### Front End
+Accessing `http://localhost:8000/orders` in your browser you will see:
+![orders list](screenshots/orders-list.png)
+
+Accessing `http://localhost:8000/orders/ID` you will see:
+![order detail](screenshots/order-detail.png)
