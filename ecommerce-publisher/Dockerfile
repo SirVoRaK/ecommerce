@@ -2,10 +2,12 @@ FROM eclipse-temurin:20.0.2_9-jdk-alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache maven
+
 COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
+COPY pom.xml ./
+RUN mvn dependency:go-offline
 
 COPY src ./src
 
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["mvn", "spring-boot:run"]
