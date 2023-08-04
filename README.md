@@ -18,8 +18,8 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 
 2. Clone the repository and cd into it:
 
-```
-git clone https://github.com/SirVoRaK/ecommerce
+```bash
+git clone https://github.com/SirVoRaK/ecommerce && \
 cd ecommerce
 ```
 
