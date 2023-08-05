@@ -8,6 +8,7 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 2. [Run locally](#run-locally)
 3. [API Usage](#api-usage)
 4. [Front End](#front-end)
+5. [Unit Tests](#unit-tests)
 
 ### Basic features:
 - Receive orders from third parties origins.
@@ -35,8 +36,8 @@ docker build -t ecommerce-frontend ecommerce-frontend
 4. **__(IMPORTANT)__** Create the data folder:
 
 ```bash
-mkdir data
-mkdir data/mongodb
+mkdir data && \
+mkdir data/mongodb && \
 mkdir data/pubsub
 ```
 
@@ -240,3 +241,8 @@ Accessing `http://localhost:8000/orders` in your browser you will see:
 
 Accessing `http://localhost:8000/orders/ID` you will see:
 ![order details](screenshots/order-details.png)
+
+### Unit Tests
+Both microservices are tested using JUnit and Mockito:
+![unit tests publisher](screenshots/unit_tests_publisher.png)
+![unit tests consumer](screenshots/unit_tests_consumer.png)
