@@ -5,14 +5,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
+import tech.rodolfoi.ecommercepublisher.builders.OrderBuilder;
 import tech.rodolfoi.ecommercepublisher.dtos.inputs.OrderInput;
 
 @Data
 public class Order {
     private String order;
     private String origin;
+    @Setter(AccessLevel.NONE)
     private Double total;
+    @Setter(AccessLevel.NONE)
     private String createdAt;
     private List<Item> items;
 
@@ -33,10 +38,10 @@ public class Order {
     }
 
     public static Order fromOrderInput(OrderInput orderInput) {
-        Order order = new Order();
-        order.setOrder(orderInput.order());
-        order.setOrigin(orderInput.origin());
-        order.setItems(Item.fromItemInput(orderInput.items()));
-        return order;
+        return new OrderBuilder()
+                .withOrder(orderInput.order())
+                .withOrigin(orderInput.origin())
+                .withItems(Item.fromItemInput(orderInput.items()))
+                .build();
     }
 }
