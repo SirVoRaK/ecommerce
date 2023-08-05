@@ -10,7 +10,6 @@ import tech.rodolfoi.ecommercepublisher.dtos.Order;
 import tech.rodolfoi.ecommercepublisher.dtos.inputs.ItemInput;
 import tech.rodolfoi.ecommercepublisher.dtos.inputs.OrderInput;
 import tech.rodolfoi.ecommercepublisher.publishers.OrderPublisher;
-import tech.rodolfoi.ecommercepublisher.publishers.OrderPublisherTests;
 
 import java.util.List;
 
