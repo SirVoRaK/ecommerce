@@ -262,7 +262,7 @@ After that the ecommerce-consumer listens to that topic, parses the JSON into an
 <br>
 The consumer is also responsible for exposing a GraphQL endpoint to read the orders from the database, by making this the third parties won't have access to all orders.
 <br>
-The front end is made with Angular. It makes a request to the consumer to get the orders and display it to the user, clicking on an order you'll se it's details.
+The front end is made with Angular. It makes a request to the consumer to get the orders and display it to the user, clicking on an order you'll see it's details.
 
 ### Future Improvements
 - Adding order pagination.
