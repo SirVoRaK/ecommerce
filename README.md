@@ -9,6 +9,8 @@ Simple Ecommerce endpoints using GraphQL and PubSub.
 3. [API Usage](#api-usage)
 4. [Front End](#front-end)
 5. [Unit Tests](#unit-tests)
+6. [Hot it Works](#how-it-works)
+7. [Future Improvements](#future-improvements)
 
 ### Basic features:
 - Receive orders from third parties origins.
@@ -246,3 +248,17 @@ Accessing `http://localhost:8000/orders/ID` you will see:
 Both microservices are tested using JUnit and Mockito:
 ![unit tests publisher](screenshots/unit_tests_publisher.png)
 ![unit tests consumer](screenshots/unit_tests_consumer.png)
+
+### How it Works
+The ecommerce-publisher project is responsible for receiving an order through a GraphQL endpoint (exposed to the third parties), parsing it to JSON and publishing it to a PubSub topic/queue.
+<br>
+After that the ecommerce-consumer listens to that topic, parses the JSON into an Order instance and persist it to a Mongo database.
+<br>
+The consumer is also responsible for exposing a GraphQL endpoint to read the orders from the database, by making this the third parties won't have access to all the orders.
+<br>
+The front end is made with Angular. It makes a request to the consumer to get the orders and display it to the user, clicking on an order you'll se it's details.
+
+### Future Improvements
+- Adding order pagination.
+- Adding logs and save them to ElasticSearch.
+- Adding filters.
