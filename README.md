@@ -238,19 +238,21 @@ query {
 ```
 
 ### Front End
-Accessing `http://localhost:8000/orders` (or just http://localhost:8000) in your browser you will see:
+Accessing `http://localhost:8000/orders` `(or just http://localhost:8000)` in your browser you will see:
 ![orders list](screenshots/orders-list.png)
 
-Accessing `http://localhost:8000/orders/ID` (or by clicking on an order) you will see:
+Accessing `http://localhost:8000/orders/ID` `(or by clicking on an order)` you will see:
 ![order details](screenshots/order-details.png)
 
 ### Unit Tests
 Both microservices are tested using JUnit and Mockito:
 <br>
 Publisher:
+<br>
 ![unit tests publisher](screenshots/unit_tests_publisher.png)
 <br>
 Consumer:
+<br>
 ![unit tests consumer](screenshots/unit_tests_consumer.png)
 
 ### How it Works
