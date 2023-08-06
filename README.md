@@ -182,58 +182,58 @@ query {
 
 ```graphql
 query {
-	placedOrder (id: "64cc0ba8dd694012b48b31ee") {
-		id,
-		order,
-		origin,
-		total,
-		createdAt,
-		items {
-			name,
-			image,
-			qty,
-			cost,
-			currency
-		}
-	}
+    placedOrder (id: "64cc0ba8dd694012b48b31ee") {
+        id,
+        order,
+        origin,
+        total,
+        createdAt,
+        items {
+            name,
+            image,
+            qty,
+            cost,
+            currency
+        }
+    }
 }
 ```
 
 ##### Example Response:
 ```json
 {
-	"data": {
-		"placedOrder": {
-			"id": "64cc0ba8dd694012b48b31ee",
-			"order": "MY-ORDER-NUMBER-1",
-			"origin": "moon",
-			"total": 98.25,
-			"createdAt": "2023-08-03T17:18:48.051946324",
-			"items": [
-				{
-					"name": "Boot",
-					"image": "image-path.png",
-					"qty": 1,
-					"cost": 50.25,
-					"currency": "BRL"
-				},
-				{
-					"name": "Hammer",
-					"image": "image-path.png",
-					"qty": 2,
-					"cost": 10.5,
-					"currency": "BRL"
-				},
-				{
-					"name": "Fork",
-					"image": "image-path.png",
-					"qty": 12,
-					"cost": 2.25,
-					"currency": "BRL"
-				}
-			]
-		}
-	}
+    "data": {
+        "placedOrder": {
+            "id": "64cc0ba8dd694012b48b31ee",
+            "order": "MY-ORDER-NUMBER-1",
+            "origin": "moon",
+            "total": 98.25,
+            "createdAt": "2023-08-03T17:18:48.051946324",
+            "items": [
+                {
+                    "name": "Boot",
+                    "image": "image-path.png",
+                    "qty": 1,
+                    "cost": 50.25,
+                    "currency": "BRL"
+                },
+                {
+                    "name": "Hammer",
+                    "image": "image-path.png",
+                    "qty": 2,
+                    "cost": 10.5,
+                    "currency": "BRL"
+                },
+                {
+                    "name": "Fork",
+                    "image": "image-path.png",
+                    "qty": 12,
+                    "cost": 2.25,
+                    "currency": "BRL"
+                }
+            ]
+        }
+    }
 }
 ```
 
